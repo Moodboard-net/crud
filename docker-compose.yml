@@ -13,8 +13,6 @@ services:
       DB_USER: root
       DB_PASSWORD: root
       DB_NAME: crud_db
-    volumes:
-      - crud:/app/cache
     deploy:
       resources:
         reservations:
@@ -23,7 +21,3 @@ services:
         limits:
           cpus: '0.5'
           memory: 50M
-
-volumes:
-  crud:
-    external: true
