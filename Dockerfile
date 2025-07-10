@@ -2,7 +2,7 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-COPY config/.env.example .env
+COPY .env.example .env
 RUN npm install --production
 COPY . .
 
