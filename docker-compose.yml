@@ -13,6 +13,8 @@ services:
       DB_USER: root
       DB_PASSWORD: root
       DB_NAME: crud_db
+    networks:
+      - mysql_default
     deploy:
       resources:
         reservations:
@@ -21,3 +23,7 @@ services:
         limits:
           cpus: '0.5'
           memory: 50M
+
+networks:
+  mysql_default:
+    driver: bridge
