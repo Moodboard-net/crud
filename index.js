@@ -11,6 +11,6 @@ app.use(cors());
 app.use(express.json());
 app.use(fileUpload());
 app.use(express.static('public'));
-app.use('/api', ProductRoute);
+app.use(ProductRoute);
 
 app.listen(process.env.PORT, () => console.log('Server up and running'));
