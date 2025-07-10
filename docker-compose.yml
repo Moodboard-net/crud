@@ -1,0 +1,29 @@
+services:
+  crud:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: moodboard/crud:latest
+    container_name: crud
+    ports:
+      - 5000:5000
+    environment:
+      DB_HOST: 192.168.100.14
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: crud_db
+    volumes:
+      - crud:/app/cache
+    deploy:
+      resources:
+        reservations:
+          cpus: '0.25'
+          memory: 30M
+        limits:
+          cpus: '0.5'
+          memory: 50M
+
+volumes:
+  crud:
+    external: true
