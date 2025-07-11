@@ -16,7 +16,7 @@ services:
     networks:
       - mysql_default
     volumes:
-      - public/images:/app/public/images
+      - images_data:/app/public/images
     deploy:
       resources:
         reservations:
@@ -27,7 +27,7 @@ services:
           memory: 50M
 
 volumes:
-  images_data:
+  images_data: {}
 
 networks:
   mysql_default:
