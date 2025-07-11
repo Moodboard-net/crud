@@ -4,6 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 COPY .env.example .env
 RUN npm install --production
+RUN mkdir -p /public/image
 COPY . .
 
 # Stage 2: Runtime
